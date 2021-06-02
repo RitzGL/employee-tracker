@@ -1,0 +1,2 @@
+-- INSERT statements with dummy data to test with
+-- this is run to fill the database when queries are done
