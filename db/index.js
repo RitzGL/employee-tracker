@@ -53,7 +53,7 @@ async function getDepartment(){
 }
 
 async function getRole(){
-    let department = await inquirer.prompt([
+    let role = await inquirer.prompt([
         {
             type: "input",
             name: "title",
@@ -72,5 +72,42 @@ async function getRole(){
             message: "Enter new role's department ID: "
         }
     ])
-    return department;
+    return role;
+}
+
+async function getEmployee(){
+    // query database for departments
+    // store them in an array
+    // pass them to the prompt
+
+    // query database for roles
+    // store them in an array
+    // pass them to the prompt
+    let employee = await inquirer.prompt([
+        {
+            type: "input",
+            name: "firstName",
+            message: "Enter new employee's first name: "
+        },
+        {
+            type: "input",
+            name: "lastName",
+            message: "Enter new employee's last name: "
+        },
+        // Query database, and pass in the array obtained from that table
+        // Limiting user input, and less chance of misinput
+        {
+            type: "list",
+            name: "department",
+            message: "Choose new employee's department: ",
+            choices: []
+        },
+        {
+            type: "list",
+            name: "role",
+            message: "Choose new employee's role: ",
+            choices: []
+        }
+    ])
+    return employee;
 }
